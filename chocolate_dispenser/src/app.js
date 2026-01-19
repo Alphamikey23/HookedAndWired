@@ -53,6 +53,9 @@ function addChocolates(chocolates, color, count) {
 // 5. If number > chocolates.length → return "Insufficient chocolates in the dispenser"
 function removeChocolates(number, chocolates) {
   // Your code here
+  console.log(number);
+  console.log(chocolates.slice(-3));
+  return chocolates.slice(-3);
  
 }
 
