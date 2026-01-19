@@ -16,5 +16,92 @@ const recipes = [
         description: "Tender chicken pieces in a creamy, spiced tomato sauce.",
         category: "curry"
     },
+    {
+        id: 3,
+        title: "Homemade Croissants",
+        time: 180,
+        difficulty: "hard",
+        description: "Buttery, flaky French pastries that require patience but deliver amazing results",
+        category: "baking"
+    },
+    {
+        id: 4,
+        title: "Greek Salad",
+        time: 15,
+        difficulty: "easy",
+        description: "Fresh vegetables, feta cheese, and olives tossed in olive oil and herbs",
+        category: "salad",
+    },
+    {
+        id: 5,
+        title: "Beef Wellington",
+        time: 120,
+        difficulty: "hard",
+        description: "Tender beef fillet coated with mushroom duxelles and wrapped in puff pastry",
+        category : "meat",
+    },
+    {
+        id: 6,
+        title: "Vegetable Stri Fry",
+        time: 20,
+        difficulty: "easy",
+        description: "Colorful mixed vegetables cooked quickly in a savory sauce",
+        category: "vegetarian",
+    },
+    {
+        id: 7,
+        title: "Pad Thai",
+        time: 30,
+        difficulty: "medium",
+        description: "Thai stir-fried rice noodles with shrimp, peanuts, and tangy tamarind sauce",
+        category: "noodles",
+    },
+    {
+        id: 8,
+        title: "Margherita Pizza",
+        time: 60,
+        difficulty: "medium",
+        description: "Classic Italian Pizza with fresh mozzarella, tomatoes, and basil",
+        category: "pizza"
+    }
+
     // TODO: Add 6 more recipe objects following the same structure
+
+    
 ];
+
+
+const recipeContainer = document.querySelector("#recipe-container");
+console.log(recipeContainer);
+
+
+const createRecipeCard = (recipe) => {
+    return `
+        <div class="recipe-card" data-id="${recipe.id}">
+            <h3>${recipe.title}</h3>
+            <div class="recipe-meta">
+                <span>⏱️ ${recipe.time} min</span>
+                <span class="difficulty ${recipe.difficulty}">${recipe.difficulty}</span>
+            </div>
+            <p>${recipe.description}</p>
+        </div>
+    `;
+};
+
+
+
+const renderRecipes = (recipesToRender) => {
+  if (!recipeContainer) {
+    console.warn('No #recipe-container found in the DOM.');
+    return;
+  }
+
+  const allHtml = recipesToRender
+    .map(createRecipeCard)   // map each recipe -> HTML string
+    .join('');               // join into one HTML string
+
+  recipeContainer.innerHTML = allHtml;
+};
+
+// render on load
+renderRecipes(recipes);
