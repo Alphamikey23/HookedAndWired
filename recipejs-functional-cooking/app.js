@@ -74,7 +74,7 @@ const recipes = [
 const recipeContainer = document.querySelector("#recipe-container");
 console.log(recipeContainer);
 
-<<<<<<< HEAD
+
 
 const createRecipeCard = (recipe) => {
     return `
@@ -106,5 +106,3 @@ const renderRecipes = (recipesToRender) => {
 
 // render on load
 renderRecipes(recipes);
-=======
->>>>>>> refs/remotes/origin/main
