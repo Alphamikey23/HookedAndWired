@@ -53,18 +53,13 @@ function createPop(arrayOfNumbers, itemToSearch) {
       if(currItem == itemToSearch) {
          currIndex = index;
          check = true;
-         return 1;
+         // return 1;
       }
-      return 0;
+      // return 0;
 
    })
 
-   console.log(array_mapped);
-     
-
-      
-
-   
+   //console.log(array_mapped);
     
   }
   
