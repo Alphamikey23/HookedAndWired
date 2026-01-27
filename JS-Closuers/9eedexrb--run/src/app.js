@@ -46,50 +46,20 @@ function createPop(arrayOfNumbers, itemToSearch) {
   function searchForElement() {
     // TODO
     
-   //  console.log(arrayOfNumbers.map((n),function() {
-   //    if(itemToSearch == n) {
-   //       currIndex = n;
-   //       check = true;
-   //    }}));
-
-   // arrayOfNumbers.map(function(currItem, index) {
-   //    if(currItem == itemToSearch) {
-   //       currIndex = index;
-   //       check = true;
-   //    }
-
-   // })
+   
 
    // using map function to search
    const array_mapped = arrayOfNumbers.map(function(currItem, index,) {
       if(currItem == itemToSearch) {
          currIndex = index;
          check = true;
-         return 1;
+         // return 1;
       }
-      return 0;
+      // return 0;
 
    })
 
-   currIndex = array_mapped.indexOf(1);
-     
-
-      
-
-   // } );
-   // console.log(array_mapped);
-   
-   //  for(let i = 0;i<arrayOfNumbers.length;i++) {
-   //    console.log(itemToSearch,arrayOfNumbers[i]);
-   //    if (itemToSearch === arrayOfNumbers[i]) {
-   //       //console.log(itemToSearch,i,arrayOfNumbers[i]);
-   //       currIndex = i;
-   //       check = true;
-   //       return;
-   //    }
-
-    
-    //console.log(currIndex);
+   //console.log(array_mapped);
     
   }
   
