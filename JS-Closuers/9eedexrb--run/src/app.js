@@ -30,6 +30,7 @@ function createPop(arrayOfNumbers, itemToSearch) {
   */
   let currIndex = NEG_INF;
   let check = false;
+  //console.log(arrayOfNumbers,itemToSearch);
 
   /* TODO 4:
      Create an inner function named searchForElement
@@ -41,23 +42,32 @@ function createPop(arrayOfNumbers, itemToSearch) {
          - Leave currIndex as NEG_INF
          - Leave check as false
   */
+ //console.log(arrayOfNumbers,itemToSearch);
   function searchForElement() {
     // TODO
-   //  arrayOfNumbers.map(n,function() {
-   //    if(itemToSearch == n) {
-   //       currIndex = 
-   //    }
-    for(let i = 0;i<arrayOfNumbers.length;i++) {
-      if (itemToSearch == arrayOfNumbers[i]) {
-         console.log(itemToSearch,i,arrayOfNumbers[i]);
-         currIndex = i;
+    
+   
+
+   // using map function to search
+   const array_mapped = arrayOfNumbers.map(function(currItem, index,) {
+      if(currItem == itemToSearch) {
+         currIndex = index;
          check = true;
+         return 1;
       }
-      else {
-         check =  false;
-      }
-    }
+      return 0;
+
+   })
+
+   console.log(array_mapped);
+     
+
+      
+
+   
+    
   }
+  
 
   /* TODO 5:
      Call the searchForElement function here
@@ -72,10 +82,12 @@ function createPop(arrayOfNumbers, itemToSearch) {
      - If check is false, return:
        "The item is not present and is at index ${currIndex}"
   */
- if(check == true) {
+ return function() {
+   if(check == true) {
    return `The item is present and is at index ${currIndex}`;
  }
  else {
    return `The item is not present and is at index ${currIndex}`;
  }
+ };
 }
