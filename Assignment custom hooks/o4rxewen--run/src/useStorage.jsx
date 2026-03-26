@@ -3,20 +3,24 @@
 import { useEffect, useState } from 'react';
 
 function saveValue(key, initialValue) {
-  try {
-    const localValue = localStorage.getItem(key);
+
+  const localValue = localStorage.getItem(key);
+  const sessionValue = sessionStorage.getItem(key);
+
+
     if (localValue !== null) {
       return JSON.parse(localValue);
     }
-    const sessionValue = sessionStorage.getItem(key);
-    if (sessionValue !== null) {
-      return JSON.parse(sessionValue);
+    else {
+      if(sessionValue !== null) {
+        return JSON.parse(sessionValue);
+      }
+      else {
+        return initialValue;
+      }      
     }
-  } catch (error) {
-    // If parsing fails, ignore and return initialValue
+
   }
-  return initialValue;
-}
 
 export default function useLocalStorage(key, initialValue) {
   const [content, setContent] = useState(() => saveValue(key, initialValue));
